@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   annotations:
     reloader.stakater.com/auto: "true"
-    secret.reloader.stakater.com/reload: fiap/restaurante-acme-video
+    secret.reloader.stakater.com/reload: fiap/hackathon-video-image-converter
   namespace: fiap
-  name: restaurante-acme-video
+  name: hackathon-video-image-converter
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: restaurante-acme-video
+      app: hackathon-video-image-converter
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -19,12 +19,12 @@ spec:
   template:
     metadata:
       labels:
-        app: restaurante-acme-video
+        app: hackathon-video-image-converter
     spec:
       serviceAccountName: metrics-sa
       containers:
-        - name: restaurante-acme-video
-          image: developer0101/restaurante-acme-video:latest
+        - name: hackathon-video-image-converter
+          image: 814482976567.dkr.ecr.us-east-1.amazonaws.com/hackathon-video-image-converter:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 4080
@@ -42,20 +42,6 @@ spec:
               cpu: "512m"
           envFrom:
             - secretRef:
-                name: restaurante-acme-secrets
+                name:  hackathon-video-image-secrets
             - configMapRef:
-                name: restaurante-acme-video-vars
-          readinessProbe:
-              httpGet:
-                  path: /v1/api/healthcheck
-                  port: 4080
-              initialDelaySeconds: 0
-              timeoutSeconds: 1
-              periodSeconds: 10
-          livenessProbe:
-              httpGet:
-                  path: /v1/api/healthcheck
-                  port: 4080
-              initialDelaySeconds: 0
-              timeoutSeconds: 1
-              periodSeconds: 10
+                name: hackathon-video-image-converter-vars

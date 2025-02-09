@@ -30,8 +30,10 @@ spec:
             - containerPort: 4080
               protocol: TCP
           securityContext:
-            runAsNonRoot: false
-            allowPrivilegeEscalation: false
+            runAsUser: 0  # Garantindo que rode como root
+            runAsGroup: 0  # Garantindo que o grupo seja o root
+            runAsNonRoot: false  # Permitindo execução como root
+            allowPrivilegeEscalation: true  # Permite escalonamento de privilégios
           resources:
             requests:
               memory: "512Mi"
@@ -41,6 +43,6 @@ spec:
               cpu: "512m"
           envFrom:
             - secretRef:
-                name:  hackathon-video-image-secrets
+                name: hackathon-video-image-secrets
             - configMapRef:
                 name: hackathon-video-image-converter-vars

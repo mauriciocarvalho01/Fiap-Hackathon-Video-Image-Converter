@@ -18,8 +18,9 @@ COPY --from=ts-compiler /usr/app/public ./public
 FROM node:alpine
 WORKDIR /usr/app
 
-# Adicionando biblioteca openssl se necessário
-RUN apk add --no-cache openssl
+# Adicionando biblioteca se necessário
+# Instalar openssl e ffmpeg
+RUN apk add --no-cache openssl ffmpeg
 
 # ENV DOCKERIZE_VERSION v0.6.1
 # RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \

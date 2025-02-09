@@ -2,9 +2,9 @@ import { logger } from '@/infra/helpers/logger';
 import ffmpeg from 'fluent-ffmpeg';
 import fs from 'fs'
 
-// Configura os caminhos diretamente
-ffmpeg.setFfmpegPath(`${process.cwd()}/libs/ffmpeg/ffmpeg_7.1.orig`);
-ffmpeg.setFfprobePath(`${process.cwd()}/libs/ffmpeg/ffmpeg_7.1.orig`);
+// // Configura os caminhos diretamente
+// ffmpeg.setFfmpegPath(`${process.cwd()}/libs/ffmpeg/ffmpeg_7.1.orig`);
+// ffmpeg.setFfprobePath(`${process.cwd()}/libs/ffmpeg/ffmpeg_7.1.orig`);
 
 export const extractFrames = async ({
   tempVideoPath,

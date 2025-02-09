@@ -32,6 +32,8 @@ COPY --from=ts-remover /usr/app ./
 # Instale alias de módulo
 RUN npm i --save module-alias
 
+USER root
+
 # Use o script de entrada
 ENTRYPOINT ["npm", "start"]
 

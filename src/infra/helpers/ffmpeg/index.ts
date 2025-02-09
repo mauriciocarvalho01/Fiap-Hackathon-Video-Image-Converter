@@ -3,8 +3,8 @@ import ffmpeg from 'fluent-ffmpeg';
 import fs from 'fs'
 
 // Configura os caminhos diretamente
-ffmpeg.setFfmpegPath(`${process.cwd()}/libs/ffmpeg/ffmpeg.exe`);
-ffmpeg.setFfprobePath(`${process.cwd()}/libs/ffmpeg/ffprobe.exe`);
+ffmpeg.setFfmpegPath(`${process.cwd()}/libs/ffmpeg/ffmpeg_7.1.orig`);
+ffmpeg.setFfprobePath(`${process.cwd()}/libs/ffmpeg/ffmpeg_7.1.orig`);
 
 export const extractFrames = async ({
   tempVideoPath,

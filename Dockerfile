@@ -2,6 +2,7 @@ FROM node:alpine as ts-compiler
 WORKDIR /usr/app
 COPY package*.json ./
 COPY tsconfig*.json ./
+COPY public ./
 RUN npm install
 
 # Copie todo o código fonte e compile
@@ -12,6 +13,7 @@ FROM node:alpine as ts-remover
 WORKDIR /usr/app
 COPY --from=ts-compiler /usr/app/package*.json ./
 COPY --from=ts-compiler /usr/app/dist ./dist
+COPY --from=ts-compiler /usr/app/public ./public
 
 FROM node:alpine
 WORKDIR /usr/app

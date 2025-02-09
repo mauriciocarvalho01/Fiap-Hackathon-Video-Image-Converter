@@ -6,8 +6,8 @@ describe('Twilio Integration Test', () => {
   let sut: Twilio;
   const accountSid = env.notifications.twilioAccountSid;
   const authToken = env.notifications.twilioAccountToken;
-  const from = 'whatsapp:+14155238886';
-  const to = env.notifications.twilioFakeWhatsAppNumber;
+  const from = env.notifications.twilioFakeWhatsAppFromNumber;
+  const to = env.notifications.twilioFakeWhatsAppToNumber;
 
   beforeAll(() => {
     if (!accountSid || !authToken || !from || !to) {

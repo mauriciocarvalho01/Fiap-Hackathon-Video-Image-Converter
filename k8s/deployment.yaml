@@ -30,7 +30,6 @@ spec:
             - containerPort: 4080
               protocol: TCP
           securityContext:
-            runAsUser: 1000
             runAsNonRoot: false
             allowPrivilegeEscalation: false
           resources:

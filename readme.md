@@ -71,7 +71,7 @@ Certifique-se de ter os seguintes softwares instalados na sua máquina:
 Clone este repositório para sua máquina local:
 
 ```sh
-git clone https://github.com/mauriciocarvalho01/Fiap-Hackathon-Video-Image-Converter.git 
+git clone https://github.com/mauriciocarvalho01/Fiap-Hackathon-Video-Image-Converter.git
 cd FIAP-Software-Architecture-Pos-Tech-7SOAT
 ```
 
@@ -105,4 +105,4 @@ kubectl apply -f k8s/hpa.yaml
 
 - [Arquitetura Microserviços](public/Fiap-Hackathon-Video-Image-Arch.png)
 
-- [Video Explicação da Arquitetura](https://1drv.ms/v/s!AmX5yCf3Zx_Qp6UIyDJs8dCk9VCdtw?e=ioqhWf)
+- [Video Explicação da Arquitetura](https://1drv.ms/v/s!AmX5yCf3Zx_Qp6VjWo9wRDkRq_cIPg?e=HKgcap)
